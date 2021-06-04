@@ -9,7 +9,6 @@ import android.widget.ScrollView
 import android.widget.TextView
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var mainContainer: ScrollView
     private lateinit var emailInput: EditText
     private lateinit var passwordInput: EditText
     private lateinit var forgotPasswordText: TextView
@@ -23,7 +22,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        mainContainer = findViewById(R.id.login_container)
         emailInput = findViewById(R.id.login_email_filed)
         passwordInput = findViewById(R.id.login_password_filed)
         forgotPasswordText = findViewById(R.id.login_forgot_password)
