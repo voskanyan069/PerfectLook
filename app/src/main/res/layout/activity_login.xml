@@ -1,71 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
+    android:id="@+id/login_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:focusedByDefault="true"
-    android:overScrollMode="never"
-    android:scrollbars="none"
+    android:orientation="vertical"
     tools:context=".authentication.LoginActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        style="@style/Theme.PerfectLook.Header.Title1"
+        android:text="@string/welcome_back"
+        android:layout_marginTop="100dp" />
+
+    <EditText
+        android:id="@+id/login_email_filed"
+        android:layout_marginTop="60dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/e_mail"
+        android:background="@drawable/left_top_border_button"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        style="@style/Theme.PerfectLook.View.LeftBorder" />
+
+    <EditText
+        android:id="@+id/login_password_filed"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:background="@drawable/right_top_border_button"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        style="@style/Theme.PerfectLook.View.RightBorder" />
+
+    <TextView
+        android:id="@+id/login_forgot_password"
+        android:layout_marginTop="10dp"
+        android:text="@string/forgot_your_password"
+        android:background="@drawable/left_top_border_button"
+        android:padding="10dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:textColor="@color/text"
+        style="@style/Theme.PerfectLook.View.RightBorder" />
+
+    <Button
+        android:id="@+id/login_submit"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/right_top_border_button"
+        android:text="@string/submit"
+        style="@style/Theme.PerfectLook.View.RightBorder" />
+
+    <am.perfectlook.perfectlook.views.SocialMediaView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="center_horizontal" />
 
-        <TextView
-            style="@style/Theme.PerfectLook.Header.Title1"
-            android:text="@string/welcome_back"
-            android:layout_marginTop="100dp" />
-
-        <EditText
-            android:id="@+id/login_email_filed"
-            android:layout_marginTop="60dp"
-            android:inputType="textEmailAddress"
-            android:hint="@string/e_mail"
-            android:background="@drawable/left_top_border_button"
-            android:padding="10dp"
-            android:textSize="18sp"
-            android:gravity="center"
-            style="@style/Theme.PerfectLook.View.LeftBorder" />
-
-        <EditText
-            android:id="@+id/login_password_filed"
-            android:layout_marginTop="10dp"
-            android:inputType="textPassword"
-            android:hint="@string/password"
-            android:background="@drawable/right_top_border_button"
-            android:padding="10dp"
-            android:textSize="18sp"
-            android:gravity="center"
-            style="@style/Theme.PerfectLook.View.RightBorder" />
-
-        <TextView
-            android:id="@+id/login_forgot_password"
-            android:layout_marginTop="10dp"
-            android:text="@string/forgot_your_password"
-            android:background="@drawable/left_top_border_button"
-            android:padding="10dp"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:textColor="@color/text"
-            style="@style/Theme.PerfectLook.View.RightBorder" />
-
-        <Button
-            android:id="@+id/login_submit"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/right_top_border_button"
-            android:text="@string/submit"
-            style="@style/Theme.PerfectLook.View.RightBorder" />
-
-        <am.perfectlook.perfectlook.views.SocialMediaView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
