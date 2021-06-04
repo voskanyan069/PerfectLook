@@ -1,6 +1,7 @@
 package am.perfectlook.perfectlook.authentication
 
-import android.support.v7.app.AppCompatActivity
+import am.perfectlook.perfectlook.R
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class LoginActivity : AppCompatActivity() {

@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PerfectLook">
-        <activity android:name=".authentication.SignupActivity"></activity>
-        <activity android:name=".authentication.LoginActivity" />
-        <activity android:name=".activities.AuthenticationActivity" />
+        <activity
+            android:name=".authentication.SignupActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".authentication.LoginActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

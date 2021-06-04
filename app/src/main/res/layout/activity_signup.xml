@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signup_background"
     tools:context=".authentication.SignupActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Theme.PerfectLook.Header.Title1"
+            android:text="@string/join_us"
+            android:layout_marginTop="100dp" />
+
+        <EditText
+            android:id="@+id/signup_fname_filed"
+            android:layout_marginTop="60dp"
+            android:inputType="text"
+            android:hint="@string/first_name"
+            android:background="@drawable/left_top_border_button"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            style="@style/Theme.PerfectLook.View.LeftBorder" />
+
+        <EditText
+            android:id="@+id/signup_lname_filed"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:hint="@string/last_name"
+            android:background="@drawable/right_top_border_button"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            style="@style/Theme.PerfectLook.View.RightBorder" />
+
+        <EditText
+            android:id="@+id/signup_email_filed"
+            android:layout_marginTop="10dp"
+            android:inputType="textEmailAddress"
+            android:hint="@string/e_mail"
+            android:background="@drawable/left_top_border_button"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            style="@style/Theme.PerfectLook.View.LeftBorder" />
+
+        <EditText
+            android:id="@+id/signup_password_filed"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:background="@drawable/right_top_border_button"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            style="@style/Theme.PerfectLook.View.RightBorder" />
+
+        <Button
+            android:id="@+id/signup_submit"
+            android:layout_marginTop="10dp"
+            android:text="Submit"
+            android:background="@drawable/left_top_border_button"
+            style="@style/Theme.PerfectLook.View.LeftBorder" />
+
+        <am.perfectlook.perfectlook.views.SocialMediaView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 </ScrollView>

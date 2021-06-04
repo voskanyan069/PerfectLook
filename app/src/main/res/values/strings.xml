@@ -14,4 +14,7 @@
     <string name="facebook_log_in">Facebook log in</string>
     <string name="twitter_log_in">Twitter log in</string>
     <string name="google_log_in">Google+ log in</string>
+    <string name="join_us">Join us</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
 </resources>
