@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PerfectLook</string>
+    <string name="welcome_on_board">Welcome on board!</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="terms_and_policy"><u>Terms and policy</u></string>
+    <string name="skip"><u>Skip</u></string>
 </resources>

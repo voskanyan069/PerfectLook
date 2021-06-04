@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_background"
+    android:scaleType="centerCrop"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        style="@style/Theme.PerfectLook.Header.Title1"
+        android:text="@string/welcome_on_board"
+        android:layout_marginTop="100sp" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/home_login_btn"
+            style="@style/Theme.PerfectLook.Button.LeftBorder"
+            android:text="@string/log_in" />
+
+        <Button
+            android:id="@+id/home_signup_btn"
+            style="@style/Theme.PerfectLook.Button.RightBorder"
+            android:text="@string/sign_up" />
+
+        <TextView
+            android:id="@+id/home_terms_policy_btn"
+            style="@style/Theme.PerfectLook.TextView"
+            android:layout_marginTop="10dp"
+            android:text="@string/terms_and_policy"
+            android:layout_gravity="center"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/home_skip_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#00ffffff"
+            android:text="@string/skip"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_light"
+            android:textAllCaps="false"
+            android:drawableEnd="@drawable/ic_baseline_arrow"
+            android:drawablePadding="-15dp"
+            android:padding="0dp"
+            android:layout_marginRight="15dp" />
+
+    </LinearLayout>
+</RelativeLayout>
