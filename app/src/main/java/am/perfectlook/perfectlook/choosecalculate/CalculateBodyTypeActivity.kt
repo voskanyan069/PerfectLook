@@ -7,6 +7,6 @@ import android.os.Bundle
 class CalculateBodyTypeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calculate)
+        setContentView(R.layout.activity_calculate_body_type)
     }
 }
