@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/choose_calculate_background"
+    tools:context=".choosecalculate.ChooseCalculateActivity">
+
+    <TextView
+        style="@style/Theme.PerfectLook.Header.Title2"
+        android:layout_marginTop="50dp"
+        android:text="@string/choose_calculate_title"
+        />
+
+    <Button
+        android:id="@+id/choose_btn"
+        style="@style/Theme.PerfectLook.View.RightBorder"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/right_bottom_border_button"
+        android:text="@string/choose" />
+
+    <Button
+        android:id="@+id/calculate_btn"
+        style="@style/Theme.PerfectLook.View.LeftBorder"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/left_top_border_button"
+        android:text="@string/calculate" />
+
+</LinearLayout>

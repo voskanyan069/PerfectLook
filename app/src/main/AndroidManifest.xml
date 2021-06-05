@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PerfectLook">
+        <activity android:name=".choosecalculate.CalculateActivity"></activity>
+        <activity android:name=".choosecalculate.ChooseActivity" />
+        <activity android:name=".choosecalculate.ChooseCalculateActivity" />
         <activity
             android:name=".authentication.SignupActivity"
             android:windowSoftInputMode="stateVisible|adjustPan" />

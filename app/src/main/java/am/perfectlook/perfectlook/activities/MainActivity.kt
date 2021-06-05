@@ -3,6 +3,7 @@ package am.perfectlook.perfectlook.activities
 import am.perfectlook.perfectlook.R
 import am.perfectlook.perfectlook.authentication.LoginActivity
 import am.perfectlook.perfectlook.authentication.SignupActivity
+import am.perfectlook.perfectlook.choosecalculate.ChooseCalculateActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SignupActivity::class.java))
         }
         skipButton.setOnClickListener {
-
+            startActivity(Intent(this, ChooseCalculateActivity::class.java))
         }
     }
 }
