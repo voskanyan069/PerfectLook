@@ -2,7 +2,7 @@
     <style name="Theme.PerfectLook" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#dec6c5</item>
         <item name="colorPrimaryDark">#EF9A9A</item>
-        <item name="colorAccent">#F06292</item>
+        <item name="colorAccent">#dec6c6</item>
     </style>
 
     <style name="Theme.PerfectLook.Header.Title1" parent="Widget.AppCompat.TextView">

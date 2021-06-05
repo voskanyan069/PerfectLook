@@ -17,10 +17,7 @@
     <string name="join_us">Join us</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
-    <string name="choose_calculate_title">
-        If you know which body type is yours you can choose it.<br />
-        If you don't, you can calculate it right now.
-    </string>
+    <string name="choose_calculate_title">If you know which body type is yours you can choose it.\nIf you don\'t, you can calculate it right now.</string>
     <string name="choose">Choose</string>
     <string name="calculate">Calculate</string>
 </resources>
