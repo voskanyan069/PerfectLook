@@ -25,10 +25,10 @@ class ChooseCalculateActivity : AppCompatActivity() {
 
     private fun changeActivity() {
         chooseBtn.setOnClickListener {
-            startActivity(Intent(this, ChooseActivity::class.java))
+            startActivity(Intent(this, ChooseBodyTypeActivity::class.java))
         }
         calculateBtn.setOnClickListener {
-            startActivity(Intent(this, CalculateActivity::class.java))
+            startActivity(Intent(this, CalculateBodyTypeActivity::class.java))
         }
     }
 }

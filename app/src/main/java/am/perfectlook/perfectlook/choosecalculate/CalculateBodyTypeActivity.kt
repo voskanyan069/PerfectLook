@@ -4,9 +4,9 @@ import am.perfectlook.perfectlook.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ChooseActivity : AppCompatActivity() {
+class CalculateBodyTypeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_choose)
+        setContentView(R.layout.activity_calculate)
     }
 }

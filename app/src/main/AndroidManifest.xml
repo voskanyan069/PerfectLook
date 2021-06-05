@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PerfectLook">
-        <activity android:name=".choosecalculate.CalculateActivity"></activity>
-        <activity android:name=".choosecalculate.ChooseActivity" />
+        <activity android:name=".activities.ThisShapeActivity"></activity>
+        <activity android:name=".choosecalculate.CalculateBodyTypeActivity" />
+        <activity android:name=".choosecalculate.ChooseBodyTypeActivity" />
         <activity android:name=".choosecalculate.ChooseCalculateActivity" />
         <activity
             android:name=".authentication.SignupActivity"

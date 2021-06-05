@@ -20,4 +20,10 @@
     <string name="choose_calculate_title">If you know which body type is yours you can choose it.\nIf you don\'t, you can calculate it right now.</string>
     <string name="choose">Choose</string>
     <string name="calculate">Calculate</string>
+    <string name="choose_title">Choose the body type which is the closest to yours</string>
+    <string name="hourglass_shape">Hourglass shape</string>
+    <string name="round_shape">Round shape</string>
+    <string name="triangle_shape">Triangle shape</string>
+    <string name="rectangle_shape">Rectangle shape</string>
+    <string name="upturned_triangle_shape">Upturned triangle shape</string>
 </resources>

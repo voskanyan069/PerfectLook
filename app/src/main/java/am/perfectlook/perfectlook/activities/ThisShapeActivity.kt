@@ -1,12 +1,12 @@
-package am.perfectlook.perfectlook.choosecalculate
+package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class CalculateActivity : AppCompatActivity() {
+class ThisShapeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calculate)
+        setContentView(R.layout.activity_this_shape)
     }
 }

@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".choosecalculate.ChooseActivity">
+    tools:context=".choosecalculate.ChooseBodyTypeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/choose_title"
+        style="@style/Theme.PerfectLook.Header.Title2"
+        android:text="@string/choose_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/choose_title"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/choose_hourglass_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shape_hourglass"
+                android:layout_weight="1"
+                android:contentDescription="@string/hourglass_shape"
+                tools:ignore="NestedWeights" />
+
+            <ImageView
+                android:id="@+id/choose_round_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shape_round"
+                android:layout_weight="1"
+                android:contentDescription="@string/round_shape" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/choose_triangle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/shape_triangle"
+            android:layout_weight="1"
+            android:contentDescription="@string/triangle_shape" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/choose_rectangle_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shape_rectangle"
+                android:layout_weight="1"
+                android:contentDescription="@string/rectangle_shape"
+                tools:ignore="NestedWeights" />
+
+            <ImageView
+                android:id="@+id/choose_upturned_triangle_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shape_upturned_triangle"
+                android:layout_weight="1"
+                android:contentDescription="@string/upturned_triangle_shape" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
