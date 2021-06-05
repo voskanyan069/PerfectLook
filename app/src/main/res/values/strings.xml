@@ -26,4 +26,9 @@
     <string name="triangle_shape">Triangle shape</string>
     <string name="rectangle_shape">Rectangle shape</string>
     <string name="upturned_triangle_shape">Upturned triangle shape</string>
+    <string name="calculator_title">Please enter your parameters (shoulders, waist, hips) as shown below</string>
+    <string name="calcualte">Calcualte</string>
+    <string name="shoulders">Shoulders</string>
+    <string name="waist">Waist</string>
+    <string name="hips">Hips</string>
 </resources>

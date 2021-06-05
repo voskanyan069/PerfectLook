@@ -33,17 +33,16 @@ class ChooseBodyTypeActivity : AppCompatActivity() {
     }
 
     private fun chooseShape() {
-        hourglassBtn.setOnClickListener(shapeClickListener(BodyShape.HOURGLASS))
-        roundBtn.setOnClickListener(shapeClickListener(BodyShape.ROUND))
-        triangleBtn.setOnClickListener(shapeClickListener(BodyShape.TRIANGLE))
-        rectangleBtn.setOnClickListener(shapeClickListener(BodyShape.RECTANGLE))
-        upturnedTriangleBtn.setOnClickListener(shapeClickListener(BodyShape.UPTURNED_TRIANGLE))
+        hourglassBtn.setOnClickListener { shapeClick(BodyShape.HOURGLASS) }
+        roundBtn.setOnClickListener{ shapeClick(BodyShape.ROUND) }
+        triangleBtn.setOnClickListener{ shapeClick(BodyShape.TRIANGLE) }
+        rectangleBtn.setOnClickListener{ shapeClick(BodyShape.RECTANGLE) }
+        upturnedTriangleBtn.setOnClickListener{ shapeClick(BodyShape.UPTURNED_TRIANGLE) }
     }
 
-    private fun shapeClickListener(shape: BodyShape): View.OnClickListener? {
+    private fun shapeClick(shape: BodyShape) {
         val intent = Intent(this, ThisShapeActivity::class.java)
         intent.putExtra("shape", shape.value)
         startActivity(intent)
-        return null
     }
 }

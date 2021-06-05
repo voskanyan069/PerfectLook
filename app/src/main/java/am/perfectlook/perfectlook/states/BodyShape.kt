@@ -5,5 +5,6 @@ enum class BodyShape(val value: String) {
     ROUND("round"),
     TRIANGLE("triangle"),
     RECTANGLE("rectangle"),
-    UPTURNED_TRIANGLE("upturned_triangle");
+    UPTURNED_TRIANGLE("upturned_triangle"),
+    NONE("none")
 }
