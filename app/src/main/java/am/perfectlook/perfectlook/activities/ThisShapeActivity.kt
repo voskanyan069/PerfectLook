@@ -5,6 +5,7 @@ import am.perfectlook.perfectlook.models.BodyShapes
 import am.perfectlook.perfectlook.models.Shape
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -28,7 +29,7 @@ class ThisShapeActivity : AppCompatActivity() {
         init()
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     private fun init() {
         shapeTitle = findViewById(R.id.this_shape_title)
         shapeThumbnail = findViewById(R.id.this_shape_thumbnail)
@@ -36,7 +37,9 @@ class ThisShapeActivity : AppCompatActivity() {
 
         shapeTitle.text = getString(R.string.your_shape) + selectedShape.title
         shapeTitle.setTextColor(Color.parseColor(selectedShape.titleColor))
-        shapeThumbnail.setBackgroundResource(selectedShape.thumbnail)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            shapeThumbnail.setImageDrawable(getDrawable(selectedShape.thumbnail))
+        }
         shapeDescription.text = selectedShape.description
     }
 }
