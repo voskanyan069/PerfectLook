@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PerfectLook">
-        <activity android:name=".activities.ThisShapeActivity"></activity>
+        <activity android:name=".activities.SuitedDressesTypesActivity"></activity>
+        <activity android:name=".activities.SelectDressTypeActivity" />
+        <activity android:name=".activities.ThisShapeActivity" />
         <activity android:name=".choosecalculate.CalculateBodyTypeActivity" />
         <activity android:name=".choosecalculate.ChooseBodyTypeActivity" />
         <activity android:name=".choosecalculate.ChooseCalculateActivity" />

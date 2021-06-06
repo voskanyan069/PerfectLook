@@ -32,4 +32,6 @@
     <string name="waist">Waist</string>
     <string name="hips">Hips</string>
     <string name="your_shape">Your shape is\n</string>
+    <string name="select_dress_type_title">Choose clothing and see recommendations for your body type</string>
+    <string name="next"><u>Next</u></string>
 </resources>
