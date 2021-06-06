@@ -1,4 +1,4 @@
-package am.perfectlook.perfectlook.models
+package am.perfectlook.perfectlook.data
 
 object DressesTypes {
     val baseTypes = arrayListOf("Tops", "Bottoms", "Dresses", "Jumpsuits")

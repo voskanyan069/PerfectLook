@@ -1,6 +1,7 @@
-package am.perfectlook.perfectlook.models
+package am.perfectlook.perfectlook.data
 
 import am.perfectlook.perfectlook.R
+import am.perfectlook.perfectlook.models.Shape
 import am.perfectlook.perfectlook.states.BodyShape
 
 object BodyShapes {

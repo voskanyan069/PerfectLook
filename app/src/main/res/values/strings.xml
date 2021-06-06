@@ -34,4 +34,5 @@
     <string name="your_shape">Your shape is\n</string>
     <string name="select_dress_type_title">Choose clothing and see recommendations for your body type</string>
     <string name="next"><u>Next</u></string>
+    <string name="suited_dress_type_title">We picked dress types for you!</string>
 </resources>

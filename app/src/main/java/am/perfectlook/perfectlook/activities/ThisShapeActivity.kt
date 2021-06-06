@@ -1,8 +1,8 @@
 package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
-import am.perfectlook.perfectlook.models.BodyShapes
-import am.perfectlook.perfectlook.models.DressesTypes
+import am.perfectlook.perfectlook.data.BodyShapes
+import am.perfectlook.perfectlook.data.DressesTypes
 import am.perfectlook.perfectlook.models.Shape
 import android.annotation.SuppressLint
 import android.content.Intent

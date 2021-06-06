@@ -1,7 +1,7 @@
 package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
-import am.perfectlook.perfectlook.models.DressesTypes
+import am.perfectlook.perfectlook.data.DressesTypes
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
