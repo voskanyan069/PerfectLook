@@ -2,8 +2,10 @@ package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
 import am.perfectlook.perfectlook.data.BodyShapes
+import am.perfectlook.perfectlook.data.Config
 import am.perfectlook.perfectlook.data.DressesTypes
 import am.perfectlook.perfectlook.models.Shape
+import am.perfectlook.perfectlook.states.BodyShape
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
@@ -13,6 +15,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 class ThisShapeActivity : AppCompatActivity() {
     private lateinit var shapeTitle: TextView
@@ -29,6 +32,7 @@ class ThisShapeActivity : AppCompatActivity() {
 
         selectedShapeString = intent.getStringExtra("shape")!!
         selectedShape = BodyShapes.shapes[selectedShapeString]!!
+        Config.selectedShape = BodyShape.valueOf(selectedShape.title.uppercase())
 
         init()
         changeActivity()
@@ -43,9 +47,8 @@ class ThisShapeActivity : AppCompatActivity() {
 
         shapeTitle.text = getString(R.string.your_shape) + selectedShape.title
         shapeTitle.setTextColor(Color.parseColor(selectedShape.titleColor))
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            shapeThumbnail.setImageDrawable(getDrawable(selectedShape.thumbnail))
-        }
+        shapeThumbnail.setImageDrawable(ContextCompat.getDrawable(this,
+            selectedShape.thumbnail))
         shapeDescription.text = selectedShape.description
     }
 

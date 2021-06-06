@@ -61,6 +61,9 @@ class SelectDressTypeActivity : AppCompatActivity() {
         } else {
             val intent = Intent(this, SuitedDressesTypesActivity::class.java)
             intent.putExtra("dress_type", name)
+            intent.putStringArrayListExtra("suited_clothes", arrayListOf(
+                "A-line", "Bodycan", "Basque"
+            ))
             startActivity(intent)
         }
     }

@@ -6,5 +6,9 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
 class SuitedDressViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val thumbnail: ImageView = itemView.findViewById(R.id.suited_dress_thumbnail)
+    lateinit var thumbnail: ImageView
+
+    fun bind() {
+        thumbnail = itemView.findViewById(R.id.suited_dress_thumbnail)
+    }
 }

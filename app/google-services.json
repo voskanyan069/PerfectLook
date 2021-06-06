@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1039734148861",
+    "project_id": "perfectlook-67ddc",
+    "storage_bucket": "perfectlook-67ddc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039734148861:android:53fcf8d3ed0ac8536bf894",
+        "android_client_info": {
+          "package_name": "am.perfectlook.perfectlook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039734148861-g4r08ep8601dtqljq3t4tjg4ghep6mmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "am.perfectlook.perfectlook",
+            "certificate_hash": "6c925f395cd0ad659633a55755e88b3fbc8de3bf"
+          }
+        },
+        {
+          "client_id": "1039734148861-ouikhdll1go3phefp9aueve3ts0e4id6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNsSKV-DIVnq-RG_kBAlx4fCHz9YY22EY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039734148861-ouikhdll1go3phefp9aueve3ts0e4id6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,7 @@ package am.perfectlook.perfectlook.adapters
 import am.perfectlook.perfectlook.R
 import am.perfectlook.perfectlook.holders.view.SuitedDressViewHolder
 import am.perfectlook.perfectlook.models.SuitedDress
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -15,8 +16,10 @@ class SuitedDressAdapter(private val data: List<SuitedDress>) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: SuitedDressViewHolder, position: Int) {
-        holder.thumbnail.setImageDrawable(ContextCompat.getDrawable(holder.thumbnail.context,
-            data[position].thumbnail))
+        holder.bind()
+
+        val item = data[position]
+        holder.thumbnail.setImageResource(item.thumbnail)
     }
 
     override fun getItemCount(): Int = data.size
