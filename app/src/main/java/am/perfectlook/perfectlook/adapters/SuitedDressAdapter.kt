@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class SuitedDressAdapter(private val data: List<SuitedDress>) : RecyclerView.Adapter<SuitedDressViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuitedDressViewHolder {
@@ -19,7 +20,7 @@ class SuitedDressAdapter(private val data: List<SuitedDress>) : RecyclerView.Ada
         holder.bind()
 
         val item = data[position]
-        holder.thumbnail.setImageResource(item.thumbnail)
+        Picasso.get().load(item.thumbnailUri).into(holder.thumbnail)
     }
 
     override fun getItemCount(): Int = data.size

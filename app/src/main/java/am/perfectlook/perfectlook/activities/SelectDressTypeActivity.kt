@@ -1,7 +1,9 @@
 package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
+import am.perfectlook.perfectlook.data.Config
 import am.perfectlook.perfectlook.data.DressesTypes
+import am.perfectlook.perfectlook.data.SuitedDresses
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -22,7 +24,6 @@ class SelectDressTypeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_select_dress_type)
 
         val dressesTypes = intent.getStringArrayListExtra("dresses_types")!!
-        Log.d("mTag", "dresses_types - $dressesTypes")
 
         init(dressesTypes)
     }
@@ -61,9 +62,8 @@ class SelectDressTypeActivity : AppCompatActivity() {
         } else {
             val intent = Intent(this, SuitedDressesTypesActivity::class.java)
             intent.putExtra("dress_type", name)
-            intent.putStringArrayListExtra("suited_clothes", arrayListOf(
-                "A-line", "Bodycan", "Basque"
-            ))
+            intent.putStringArrayListExtra("suited_clothes",
+                SuitedDresses.suitedDresses[Config.selectedShape.value]!![name])
             startActivity(intent)
         }
     }

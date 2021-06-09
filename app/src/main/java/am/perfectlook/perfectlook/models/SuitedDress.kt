@@ -1,3 +1,5 @@
 package am.perfectlook.perfectlook.models
 
-class SuitedDress(val name: String, val thumbnail: Int)
+import android.net.Uri
+
+class SuitedDress(val name: String, val thumbnailUri: Uri)

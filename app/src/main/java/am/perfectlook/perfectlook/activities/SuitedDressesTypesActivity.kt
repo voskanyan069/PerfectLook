@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.firebase.storage.FirebaseStorage
 import com.yarolegovich.discretescrollview.DiscreteScrollView
 import com.yarolegovich.discretescrollview.transform.Pivot
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer
@@ -20,6 +21,8 @@ class SuitedDressesTypesActivity : AppCompatActivity() {
     private lateinit var suitedDressesContainer: DiscreteScrollView
     private lateinit var suitedDressName: TextView
 
+    private val storageRoot = FirebaseStorage.getInstance().reference
+    private val storageSuitedRef = storageRoot.child("suited_dresses")
     private val suitedClothesList = ArrayList<SuitedDress>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,18 +63,20 @@ class SuitedDressesTypesActivity : AppCompatActivity() {
     }
 
     private fun fillList(clothType: String, clothesList: ArrayList<String>) {
+        val storageClothTypeRef = storageSuitedRef.child(clothType)
         suitedClothesList.clear()
         for (cloth in clothesList) {
-            val imageName = cloth.lowercase()
-                .replace(' ', '_')
-                .replace('-', '_')
-            Log.d("mTag", "image_name - ${clothType}_${imageName}")
-            val imageResId = resources.getIdentifier("${clothType}_${imageName}", "drawable", packageName)
-            suitedClothesList.add(
-                SuitedDress(cloth, imageResId)
-            )
-            Log.d("mTag", "added to list - $cloth")
+            val imageName = cloth.lowercase().replace(' ', '_')
+            storageClothTypeRef
+                .child("${imageName}.png")
+                .downloadUrl
+                .addOnSuccessListener {
+                    Log.d("mTag", "${imageName}.png download url - $it")
+                    suitedClothesList.add(
+                        SuitedDress(cloth, it)
+                    )
+                    suitedDressesContainer.adapter!!.notifyDataSetChanged()
+                }
         }
-        suitedDressesContainer.adapter!!.notifyDataSetChanged()
     }
 }
