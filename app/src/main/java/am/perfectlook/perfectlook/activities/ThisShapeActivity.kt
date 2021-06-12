@@ -1,6 +1,7 @@
 package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
+import am.perfectlook.perfectlook.choosecalculate.CalculateBodyTypeActivity
 import am.perfectlook.perfectlook.data.BodyShapes
 import am.perfectlook.perfectlook.data.Config
 import am.perfectlook.perfectlook.data.DressesTypes
@@ -32,7 +33,12 @@ class ThisShapeActivity : AppCompatActivity() {
 
         selectedShapeString = intent.getStringExtra("shape")!!
         selectedShape = BodyShapes.shapes[selectedShapeString]!!
-        Config.selectedShape = BodyShape.valueOf(selectedShape.title.uppercase())
+        Config.selectedShape = BodyShape.valueOf(
+            selectedShape
+                .title
+                .replace(' ', '_')
+                .uppercase()
+        )
 
         init()
         changeActivity()

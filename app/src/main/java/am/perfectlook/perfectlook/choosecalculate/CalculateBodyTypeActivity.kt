@@ -6,8 +6,10 @@ import am.perfectlook.perfectlook.states.BodyShape
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import com.google.android.material.snackbar.Snackbar
 
 class CalculateBodyTypeActivity : AppCompatActivity() {
     private lateinit var shouldersInput: EditText
@@ -32,42 +34,46 @@ class CalculateBodyTypeActivity : AppCompatActivity() {
 
     private fun onCalculate() {
         submitBtn.setOnClickListener {
-            val shoulders = shouldersInput.text.toString().toInt()
-            val waist = waistInput.text.toString().toInt()
-            val hips = hipsInput.text.toString().toInt()
-            val x = shoulders / waist
-            val y = hips / waist
-            calculate(x, y)
+            val errorMsg: String? = when {
+                shouldersInput.text.isEmpty() -> "Please enter correct shoulders value"
+                shouldersInput.text.toString().toInt() < 10 -> "Please enter correct shoulders value"
+                waistInput.text.isEmpty() -> "Please enter correct waist value"
+                waistInput.text.toString().toInt() < 10 -> "Please enter correct waist value"
+                hipsInput.text.isEmpty() -> "Please enter correct hips value"
+                hipsInput.text.toString().toInt() < 10 -> "Please enter correct hips value"
+                else -> null
+            }
+
+            if (errorMsg == null) {
+                val shoulders = shouldersInput.text.toString().toFloat()
+                val waist = waistInput.text.toString().toFloat()
+                val hips = hipsInput.text.toString().toFloat()
+                val x: Float = shoulders.div(waist)
+                val y: Float = hips.div(waist)
+                calculate(x, y)
+            } else {
+                Snackbar.make(submitBtn, errorMsg.toString(), Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
 
-    //    TODO: CALCULATOR WORKING INCORRECT
-    private fun calculate(x: Int, y: Int) {
-        val shape: BodyShape
-        if (
-            ((x > 1.25 && x < 2) && (y > 0.85 && y < 1.25)) ||
-            ((x > 1 && x < 2) && (y > 0.25 && y < 0.85))
-        ) {
-            shape = BodyShape.UPTURNED_TRIANGLE
-        } else if (
-            ((x > 0.25 && x < 1) && (y > 1.25 && y < 2)) ||
-            ((x > 0.25 && x < 0.85) && (y > 0.85 && y < 1.25))
-        ) {
-            shape = BodyShape.TRIANGLE
-        } else if (
-            ((x > 0.25 && x < 1) && (y > 0.25 && y < 0.85))
-        ) {
-            shape = BodyShape.ROUND
-        } else if (
-            ((x > 0.85 && x < 1.25) && (y > 0.85 && y < 1.25))
-        ) {
-            shape = BodyShape.RECTANGLE
-        } else if (
-            ((x > 1.25 && x < 2) && (y > 1.25 && y < 2))
-        ) {
-            shape = BodyShape.HOURGLASS
-        } else {
-            shape = BodyShape.NONE
+    private fun calculate(x: Float, y: Float) {
+        val shape: BodyShape = when {
+            (x > 1.25 && x < 2) && (y > 0.85 && y < 1.25) || (x > 1 && x < 2) && (y > 0.25 && y < 0.85) -> BodyShape.UPTURNED_TRIANGLE
+            (x > 0.25 && x < 1) && (y > 1.25 && y < 2) || (x > 0.25 && x < 0.85) && (y > 0.85 && y < 1.25) -> BodyShape.TRIANGLE
+            (x > 0.25 && x < 1) && (y > 0.25 && y < 0.85) -> BodyShape.ROUND
+            (x > 0.85 && x < 1.25) && (y > 0.85 && y < 1.25) -> BodyShape.RECTANGLE
+            (x > 1.25 && x < 2) && (y > 1.25 && y < 2) -> BodyShape.HOURGLASS
+            else -> BodyShape.NONE
+        }
+
+        if (shape == BodyShape.NONE) {
+            Snackbar.make(
+                submitBtn,
+                "Couldn\'t find your body shape, please try again with correct information",
+                Snackbar.LENGTH_LONG
+            ).show()
+            return
         }
         val intent = Intent(this, ThisShapeActivity::class.java)
         intent.putExtra("shape", shape.value)

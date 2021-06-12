@@ -51,7 +51,9 @@
         android:drawableRight="@drawable/ic_baseline_arrow"
         android:text="@string/calcualte"
         android:textSize="20sp"
+        android:textColor="@color/button"
         android:fontFamily="@font/roboto_light"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:drawableEnd="@drawable/ic_baseline_arrow" />
 
 </RelativeLayout>
