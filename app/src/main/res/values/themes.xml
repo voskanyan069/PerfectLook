@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.PerfectLook" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.PerfectLook" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">#dec6c5</item>
         <item name="colorPrimaryDark">#EF9A9A</item>
         <item name="colorAccent">#dec6c6</item>
+        <item name="colorOnSurface">#686161</item>
     </style>
 
     <style name="Theme.PerfectLook.Header.Title1" parent="Widget.AppCompat.TextView">
@@ -36,6 +37,7 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:singleLine">true</item>
+        <item name="backgroundTint">@color/button</item>
     </style>
 
     <style name="Theme.PerfectLook.View.RightBorder" parent="TextAppearance.AppCompat.Button">
@@ -49,6 +51,8 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:singleLine">true</item>
+        <item name="strokeColor">@color/button</item>
+        <item name="backgroundTint">@color/button</item>
     </style>
 
     <style name="Theme.PerfectLook.TextView" parent="Widget.AppCompat.TextView">

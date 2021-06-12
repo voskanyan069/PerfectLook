@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TermsPolicyActivity">
+
+    <TextView
+        android:id="@+id/terms_policy_title"
+        style="@style/Theme.PerfectLook.Header.Title2"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/roboto_bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/terms_policy_title"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/terms_policy_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="14sp" />
+
+    </ScrollView>
+</RelativeLayout>
