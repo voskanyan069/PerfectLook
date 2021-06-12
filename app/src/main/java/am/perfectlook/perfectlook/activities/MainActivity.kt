@@ -36,11 +36,8 @@ class MainActivity : AppCompatActivity() {
     private fun openTermsPolicyDialog() {
         termsPolicyButton.setOnClickListener {
             MaterialAlertDialogBuilder(this)
-                .setTitle("Terms and Privacy Policy")
-                .setMessage("By clicking in continue, you agree to our " +
-                        "Terms and Privacy Policy. We use a service " +
-                        "that\'s pre-installed on your device to auto-update " +
-                        "apps. You can turn off the service at any time.")
+                .setTitle(resources.getString(R.string.terms_policy_dialog_title))
+                .setMessage(resources.getString(R.string.terms_policy_dialog_message))
                 .setNeutralButton("Continue") { dialog, _ -> dialog.dismiss() }
                 .setNegativeButton("Policy") { _, _ ->
                     startTermsPolicyActivity(resources.getString(R.string.policy_title),

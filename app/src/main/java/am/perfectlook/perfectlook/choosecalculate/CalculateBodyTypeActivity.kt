@@ -41,24 +41,33 @@ class CalculateBodyTypeActivity : AppCompatActivity() {
         }
     }
 
-//    TODO: CALCULATOR WORKING INCORRECT
+    //    TODO: CALCULATOR WORKING INCORRECT
     private fun calculate(x: Int, y: Int) {
-        val shape: BodyShape = if (((x > 1.25 && x < 2) && (y > 0.85 && y < 1.25)) ||
-            ((x in 2 downTo 1) && (y > 0.25 && y < 0.85))
+        val shape: BodyShape
+        if (
+            ((x > 1.25 && x < 2) && (y > 0.85 && y < 1.25)) ||
+            ((x > 1 && x < 2) && (y > 0.25 && y < 0.85))
         ) {
-            BodyShape.UPTURNED_TRIANGLE
-        } else if (((x > 0.25 && x < 1) && (y > 1.25 && y < 2)) ||
+            shape = BodyShape.UPTURNED_TRIANGLE
+        } else if (
+            ((x > 0.25 && x < 1) && (y > 1.25 && y < 2)) ||
             ((x > 0.25 && x < 0.85) && (y > 0.85 && y < 1.25))
         ) {
-            BodyShape.TRIANGLE
-        } else if (((x > 0.25 && x < 1) && (y > 0.25 && y < 0.85))) {
-            BodyShape.ROUND
-        } else if (((x > 0.85 && x < 1.25) && (y > 0.85 && y < 1.25))) {
-            BodyShape.RECTANGLE
-        } else if (((x > 1.25 && x < 2) && (y > 1.25 && y < 2))) {
-            BodyShape.HOURGLASS
+            shape = BodyShape.TRIANGLE
+        } else if (
+            ((x > 0.25 && x < 1) && (y > 0.25 && y < 0.85))
+        ) {
+            shape = BodyShape.ROUND
+        } else if (
+            ((x > 0.85 && x < 1.25) && (y > 0.85 && y < 1.25))
+        ) {
+            shape = BodyShape.RECTANGLE
+        } else if (
+            ((x > 1.25 && x < 2) && (y > 1.25 && y < 2))
+        ) {
+            shape = BodyShape.HOURGLASS
         } else {
-            BodyShape.NONE
+            shape = BodyShape.NONE
         }
         val intent = Intent(this, ThisShapeActivity::class.java)
         intent.putExtra("shape", shape.value)
