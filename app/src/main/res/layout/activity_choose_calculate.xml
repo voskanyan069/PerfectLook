@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,6 +10,7 @@
     tools:context=".choosecalculate.ChooseCalculateActivity">
 
     <TextView
+        android:id="@+id/choose_calculate_title"
         style="@style/Theme.PerfectLook.Header.Title2"
         android:layout_marginTop="50dp"
         android:text="@string/choose_calculate_title"
@@ -19,6 +20,7 @@
         android:id="@+id/choose_btn"
         style="@style/Theme.PerfectLook.View.RightBorder"
         android:layout_marginTop="120dp"
+        android:layout_below="@id/choose_calculate_title"
         android:background="@drawable/right_bottom_border_button"
         android:text="@string/choose" />
 
@@ -26,7 +28,8 @@
         android:id="@+id/calculate_btn"
         style="@style/Theme.PerfectLook.View.LeftBorder"
         android:layout_marginTop="10dp"
+        android:layout_below="@id/choose_btn"
         android:background="@drawable/left_top_border_button"
         android:text="@string/calculate" />
 
-</LinearLayout>
+</RelativeLayout>

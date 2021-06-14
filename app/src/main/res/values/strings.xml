@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-	<string name="app_name">PerfectLook</string>
-	<string name="welcome_on_board">Welcome on board!</string>
-	<string name="log_in">Log in</string>
-	<string name="sign_up">Sign up</string>
-	<string name="terms_and_policy"><u>Terms and policy</u></string>
-	<string name="skip"><u>Skip</u></string>
-	<string name="e_mail">E-mail</string>
-	<string name="password">Password</string>
-	<string name="welcome_back">Welcome back</string>
-	<string name="forgot_your_password"><u>forgot your password?</u></string>
-	<string name="submit">Submit</string>
-	<string name="social_media">or login with social media</string>
-	<string name="facebook_log_in">Facebook log in</string>
-	<string name="twitter_log_in">Twitter log in</string>
-	<string name="google_log_in">Google+ log in</string>
-	<string name="join_us">Join us</string>
-	<string name="first_name">First name</string>
-	<string name="last_name">Last name</string>
-	<string name="choose_calculate_title">If you know which body type is yours you can choose it.\nIf you don\'t, you can calculate it right now.</string>
-	<string name="choose">Choose</string>
-	<string name="calculate">Calculate</string>
-	<string name="choose_title">Choose the body type which is the closest to yours</string>
-	<string name="hourglass_shape">Hourglass shape</string>
-	<string name="round_shape">Round shape</string>
-	<string name="triangle_shape">Triangle shape</string>
-	<string name="rectangle_shape">Rectangle shape</string>
-	<string name="upturned_triangle_shape">Upturned triangle shape</string>
-	<string name="calculator_title">Please enter your parameters (shoulders, waist, hips) as shown below</string>
-	<string name="calcualte">Calcualte</string>
-	<string name="shoulders">Shoulders</string>
-	<string name="waist">Waist</string>
-	<string name="hips">Hips</string>
-	<string name="your_shape">Your shape is\n</string>
-	<string name="select_dress_type_title">Choose clothing and see recommendations for your body type</string>
-	<string name="next"><u>Next</u></string>
-	<string name="suited_dress_type_title">We picked dress types for you!</string>
+    <string name="app_name">PerfectLook</string>
+    <string name="welcome_on_board">Welcome on board!</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="terms_and_policy"><u>Terms and policy</u></string>
+    <string name="skip"><u>Skip</u></string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="forgot_your_password"><u>forgot your password?</u></string>
+    <string name="submit">Submit</string>
+    <string name="social_media">or login with social media</string>
+    <string name="facebook_log_in">Facebook log in</string>
+    <string name="twitter_log_in">Twitter log in</string>
+    <string name="google_log_in">Google+ log in</string>
+    <string name="join_us">Join us</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="choose_calculate_title">If you know which body type is yours you can choose it.\nIf you don\'t, you can calculate it right now.</string>
+    <string name="choose">Choose</string>
+    <string name="calculate">Calculate</string>
+    <string name="choose_title">Choose the body type which is the closest to yours</string>
+    <string name="hourglass_shape">Hourglass shape</string>
+    <string name="round_shape">Round shape</string>
+    <string name="triangle_shape">Triangle shape</string>
+    <string name="rectangle_shape">Rectangle shape</string>
+    <string name="upturned_triangle_shape">Upturned triangle shape</string>
+    <string name="calculator_title">Please enter your parameters (shoulders, waist, hips) as shown below</string>
+    <string name="calcualte">Calcualte</string>
+    <string name="shoulders">Shoulders</string>
+    <string name="waist">Waist</string>
+    <string name="hips">Hips</string>
+    <string name="your_shape">Your shape is\n</string>
+    <string name="select_dress_type_title">Choose clothing and see recommendations for your body type</string>
+    <string name="next"><u>Next</u></string>
+    <string name="suited_dress_type_title">We picked dress types for you!</string>
     <string name="terms_policy_dialog_title">Terms and Privacy Policy</string>
-	<string name="terms_policy_dialog_message">
+    <string name="terms_policy_dialog_message">
 		By clicking in continue, you agree to our
         Terms and Privacy Policy. We use a service
         that\'s pre-installed on your device to auto-update
         apps. You can turn off the service at any time.
 	</string>
-	<string name="terms_title">Terms &amp; Conditions</string>
-	<string name="policy_title">Privacy Policy</string>
-	<string name="terms_content">
+    <string name="terms_title">Terms &amp; Conditions</string>
+    <string name="policy_title">Privacy Policy</string>
+    <string name="terms_content">
 		By downloading or using the app, these terms will automatically
 		apply to you – you should make sure therefore that you read them
 		carefully before using the app. You’re not allowed to copy, or
@@ -137,7 +137,7 @@
 			and Conditions, do not hesitate to contact us at
 			perfect.look.app@gmail.com.
 	</string>
-	<string name="policy_content">
+    <string name="policy_content">
 		Kari.M production built the Perfect Look app as a Free app.
 		This SERVICE is provided by Kari.M production at no cost and
 		is intended for use as is.\n
@@ -240,4 +240,7 @@
 			Privacy Policy, do not hesitate to contact us at
 			perfect.look.app@gmail.com.
 	</string>
+    <string name="username">Username</string>
+    <string name="country">Country</string>
+	<string name="date_of_birth">Date of birth</string>
 </resources>

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PerfectLook">
-        <activity android:name=".activities.TermsPolicyActivity"></activity>
+        <activity android:name=".authentication.CreateAccountActivity" />
+        <activity android:name=".activities.TermsPolicyActivity" />
         <activity android:name=".activities.SuitedDressesTypesActivity" />
         <activity android:name=".activities.SelectDressTypeActivity" />
         <activity android:name=".activities.ThisShapeActivity" />

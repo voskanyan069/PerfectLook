@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/create_account_background"
+    tools:context=".authentication.CreateAccountActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/create_account_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="22sp"
+            style="@style/Theme.PerfectLook.Header.Title2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/create_account_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/create_account_title"
+            app:civ_border_color="@color/button"
+            app:civ_border_width="2dp"
+            android:src="@drawable/account_placeholder" />
+
+        <ImageView
+            android:id="@+id/create_account_add_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_baseline_add_circle_outline"
+            android:layout_alignBottom="@id/create_account_image"
+            android:layout_alignRight="@id/create_account_image"
+            android:layout_alignEnd="@id/create_account_image" />
+
+        <EditText
+            android:id="@+id/create_account_username"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/create_account_image"
+            android:inputType="text"
+            android:hint="@string/username"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:background="@drawable/right_top_border_button"
+            android:singleLine="true"
+            style="@style/Theme.PerfectLook.View.RightBorder" />
+
+        <AutoCompleteTextView
+            android:id="@+id/create_account_country"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/create_account_username"
+            android:inputType="text"
+            android:hint="@string/country"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:background="@drawable/left_top_border_button"
+            style="@style/Theme.PerfectLook.View.LeftBorder" />
+
+        <Button
+            android:id="@+id/create_account_date_picker"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/create_account_country"
+            android:text="@string/date_of_birth"
+            android:textSize="18sp"
+            android:background="@drawable/right_top_border_button"
+            style="@style/Theme.PerfectLook.View.RightBorder" />
+
+        <Spinner
+            android:id="@+id/create_account_gender"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/create_account_date_picker"
+            android:background="@drawable/left_top_border_button"
+            android:gravity="center"
+            android:textAlignment="center"
+            style="@style/Theme.PerfectLook.View.LeftBorder" />
+
+        <Button
+            android:id="@+id/create_account_submit"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/create_account_gender"
+            android:text="@string/submit"
+            android:background="@drawable/right_top_border_button"
+            style="@style/Theme.PerfectLook.View.RightBorder" />
+
+    </RelativeLayout>
+</ScrollView>
