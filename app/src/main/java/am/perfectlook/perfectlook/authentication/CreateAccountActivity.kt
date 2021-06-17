@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -69,7 +70,6 @@ class CreateAccountActivity : AppCompatActivity() {
         country = countryInput.text.toString()
         birth = birthDateBtn.text.toString()
         isFemale = genderSpinner.selectedItem == "Female"
-        auth.createUserWithEmailAndPassword(email, password)
         val user = hashMapOf(
             "email" to email,
             "first_name" to fname,
@@ -80,14 +80,21 @@ class CreateAccountActivity : AppCompatActivity() {
             "is_female" to isFemale
         )
 
-        storeDb
-            .collection("users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d("mTag", "DocumentSnapshot added with ID: ${documentReference.id}")
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+                storeDb
+                    .collection("users")
+                    .add(user)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d("mTag", "DocumentSnapshot added with ID: ${documentReference.id}")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w("mTag", "Error adding document", e)
+                    }
             }
-            .addOnFailureListener { e ->
-                Log.w("mTag", "Error adding document", e)
+            .addOnFailureListener {
+                Snackbar.make(submitBtn, it.message!!, Snackbar.LENGTH_LONG).show()
             }
     }
 
