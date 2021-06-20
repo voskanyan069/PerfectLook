@@ -2,12 +2,15 @@ package am.perfectlook.perfectlook.authentication
 
 import am.perfectlook.perfectlook.R
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var fnameInput: EditText
@@ -15,6 +18,8 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var emailInput: EditText
     private lateinit var passwordInput: EditText
     private lateinit var submitButton: Button
+
+    private val auth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,12 +57,21 @@ class SignupActivity : AppCompatActivity() {
             if (errorMsg != null) {
                 Snackbar.make(submitButton, errorMsg, Snackbar.LENGTH_LONG).show()
             } else {
-                val intent = Intent(this, CreateAccountActivity::class.java)
-                intent.putExtra("email", email)
-                intent.putExtra("password", password)
-                intent.putExtra("first_name", fname)
-                intent.putExtra("last_name", lname)
-                startActivity(intent)
+                auth
+                    .createUserWithEmailAndPassword(email, password)
+                    .addOnSuccessListener {
+                        val intent = Intent(this, CreateAccountActivity::class.java)
+                        intent.putExtra("email", email)
+                        intent.putExtra("password", password)
+                        intent.putExtra("first_name", fname)
+                        intent.putExtra("last_name", lname)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
+                    .addOnFailureListener {
+                        Snackbar.make(submitButton, it.message.toString(), Snackbar.LENGTH_LONG)
+                            .show()
+                    }
             }
         }
     }

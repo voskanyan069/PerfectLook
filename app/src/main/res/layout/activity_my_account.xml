@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_account_background"
+    tools:context=".account.MyAccountActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_account_title"
+            style="@style/Theme.PerfectLook.Header.Title1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/myaccount"
+            android:layout_marginHorizontal="72dp" />
+
+        <ImageView
+            android:id="@+id/my_account_settings_btn"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_settings"
+            android:layout_alignTop="@id/my_account_title"
+            android:layout_alignBottom="@id/my_account_title"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            app:tint="@color/text" />
+
+        <RelativeLayout
+            android:id="@+id/my_account_profile_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_account_title"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="20dp"
+            android:background="#80FFFFFF">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/my_account_profile_img"
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/button"
+                android:src="@drawable/account_placeholder" />
+
+            <TextView
+                android:id="@+id/my_account_profile_name"
+                style="@style/Theme.PerfectLook.Header.Title2"
+                android:text="@string/app_name"
+                android:layout_toEndOf="@id/my_account_profile_img"
+                android:layout_toRightOf="@id/my_account_profile_img"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/my_account_sign_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="60dp"
+                android:layout_below="@id/my_account_profile_name"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/radius_border_button"
+                android:text="@string/sign_out"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/my_account_profile_img"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_light"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="30dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_account_fav_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_account_profile_block"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="20dp"
+            android:background="#80FFFFFF">
+
+            <Button
+                android:id="@+id/my_account_favorite_btn"
+                style="@style/Theme.PerfectLook.View.RightBorder"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/right_bottom_border_button"
+                android:textSize="18sp"
+                android:text="@string/favorites" />
+
+            <Button
+                android:id="@+id/my_account_notification_btn"
+                style="@style/Theme.PerfectLook.View.LeftBorder"
+                android:layout_marginHorizontal="10dp"
+                android:layout_below="@id/my_account_favorite_btn"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:background="@drawable/left_top_border_button"
+                android:text="@string/notifications" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_account_settings_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_account_fav_block"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="20dp"
+            android:background="#80FFFFFF">
+
+            <Button
+                android:id="@+id/my_account_info_btn"
+                style="@style/Theme.PerfectLook.View.RightBorder"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="18sp"
+                android:background="@drawable/right_top_border_button"
+                android:text="@string/personal_information"
+                android:singleLine="false" />
+
+            <Button
+                android:id="@+id/my_account_body_type_btn"
+                style="@style/Theme.PerfectLook.View.LeftBorder"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="18sp"
+                android:layout_below="@id/my_account_info_btn"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/left_top_border_button"
+                android:text="@string/my_body_type"
+                android:singleLine="false" />
+
+            <Button
+                android:id="@+id/my_account_support_btn"
+                style="@style/Theme.PerfectLook.View.RightBorder"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="18sp"
+                android:layout_below="@id/my_account_body_type_btn"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/right_top_border_button"
+                android:text="@string/perfect_look_support_team"
+                android:singleLine="false" />
+
+            <Button
+                android:id="@+id/my_account_terms_btn"
+                style="@style/Theme.PerfectLook.View.LeftBorder"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="18sp"
+                android:layout_below="@id/my_account_support_btn"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/left_top_border_button"
+                android:text="@string/terms_and_privacy"
+                android:singleLine="false" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

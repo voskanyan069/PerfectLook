@@ -1,6 +1,7 @@
 package am.perfectlook.perfectlook.activities
 
 import am.perfectlook.perfectlook.R
+import am.perfectlook.perfectlook.account.MyAccountActivity
 import am.perfectlook.perfectlook.authentication.LoginActivity
 import am.perfectlook.perfectlook.authentication.SignupActivity
 import am.perfectlook.perfectlook.choosecalculate.ChooseCalculateActivity
@@ -10,6 +11,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
@@ -21,9 +23,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        init()
-        openTermsPolicyDialog()
-        changeActivity()
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this, MyAccountActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        } else {
+            init()
+            openTermsPolicyDialog()
+            changeActivity()
+        }
     }
 
     private fun init() {

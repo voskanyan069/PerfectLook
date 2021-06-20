@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PerfectLook">
+        <activity android:name=".account.MyAccountActivity" />
         <activity android:name=".authentication.CreateAccountActivity" />
         <activity android:name=".activities.TermsPolicyActivity" />
         <activity android:name=".activities.SuitedDressesTypesActivity" />

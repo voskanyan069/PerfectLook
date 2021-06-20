@@ -9,7 +9,7 @@
     <style name="Theme.PerfectLook.Header.Title1" parent="Widget.AppCompat.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="android:textColor">@color/text</item>
         <item name="android:fontFamily">@font/dancing_bold</item>
         <item name="android:textSize">40sp</item>
         <item name="android:gravity">center</item>
@@ -19,6 +19,7 @@
     <style name="Theme.PerfectLook.Header.Title2" parent="Widget.AppCompat.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
         <item name="layout_constraintEnd_toEndOf">parent</item>
         <item name="android:fontFamily">@font/roboto_light</item>
         <item name="android:textSize">18sp</item>
@@ -58,6 +59,7 @@
     <style name="Theme.PerfectLook.TextView" parent="Widget.AppCompat.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
     </style>
 
     <style name="Theme.PerfectLook.EditText.CalculatorInput" parent="Widget.AppCompat.EditText">

@@ -242,5 +242,13 @@
 	</string>
     <string name="username">Username</string>
     <string name="country">Country</string>
-	<string name="date_of_birth">Date of birth</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="myaccount">MyAccount</string>
+    <string name="favorites">Favorites</string>
+	<string name="notifications">Notifications</string>
+	<string name="personal_information">Personal Information</string>
+	<string name="my_body_type">My Body Type</string>
+	<string name="perfect_look_support_team">Perfect Look Support Team</string>
+	<string name="terms_and_privacy">Terms and Privacy</string>
+    <string name="sign_out">Sign out</string>
 </resources>

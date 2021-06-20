@@ -1,6 +1,9 @@
 package am.perfectlook.perfectlook.authentication
 
 import am.perfectlook.perfectlook.R
+import am.perfectlook.perfectlook.account.MyAccountActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
@@ -8,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
@@ -25,6 +29,8 @@ class CreateAccountActivity : AppCompatActivity() {
     private lateinit var genderSpinner: Spinner
     private lateinit var submitBtn: Button
 
+    private var isImageChanged = false
+    private lateinit var imageUrl: String
     private lateinit var email: String
     private lateinit var password: String
     private lateinit var fname: String
@@ -32,7 +38,7 @@ class CreateAccountActivity : AppCompatActivity() {
     private lateinit var uname: String
     private lateinit var country: String
     private lateinit var birth: String
-    private var isFemale: Boolean = true
+    private var isFemale = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,24 +83,37 @@ class CreateAccountActivity : AppCompatActivity() {
             "username" to uname,
             "country" to country,
             "birth" to birth,
-            "is_female" to isFemale
+            "is_female" to isFemale,
         )
+        if (isImageChanged) {
+            user["image_url"] = imageUrl
+        }
 
-        auth
-            .createUserWithEmailAndPassword(email, password)
+        auth.currentUser!!
+            .updateProfile(
+                UserProfileChangeRequest
+                    .Builder()
+                    .setDisplayName(uname)
+                    .setPhotoUri(if (isImageChanged) Uri.EMPTY else Uri.EMPTY)
+                    .build()
+            )
+
+        storeDb
+            .collection("users")
+            .document(auth.currentUser!!.uid)
+            .set(user)
             .addOnSuccessListener {
-                storeDb
-                    .collection("users")
-                    .add(user)
-                    .addOnSuccessListener { documentReference ->
-                        Log.d("mTag", "DocumentSnapshot added with ID: ${documentReference.id}")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w("mTag", "Error adding document", e)
-                    }
+                Log.d(
+                    "mTag",
+                    "DocumentSnapshot added with ID: ${auth.currentUser!!.uid}"
+                )
+                val intent = Intent(this, MyAccountActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
-            .addOnFailureListener {
-                Snackbar.make(submitBtn, it.message!!, Snackbar.LENGTH_LONG).show()
+            .addOnFailureListener { e ->
+                Log.e("mTag", "Error adding document", e)
+                Snackbar.make(submitBtn, e.message.toString(), Snackbar.LENGTH_LONG).show()
             }
     }
 
