@@ -2,6 +2,7 @@ package am.perfectlook.perfectlook.account
 
 import am.perfectlook.perfectlook.R
 import am.perfectlook.perfectlook.activities.MainActivity
+import am.perfectlook.perfectlook.views.CircleImageView
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,10 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
-import com.squareup.picasso.Picasso
-import de.hdodenhof.circleimageview.CircleImageView
 
 class MyAccountActivity : AppCompatActivity() {
     private lateinit var settingsBtn: ImageView
@@ -39,7 +37,7 @@ class MyAccountActivity : AppCompatActivity() {
 
     private fun init() {
         settingsBtn = findViewById(R.id.my_account_settings_btn)
-        profileImageView = findViewById(R.id.my_account_profile_img)
+        profileImageView = findViewById(R.id.my_account_profile_img_container)
         profileNameTextView = findViewById(R.id.my_account_profile_name)
         profileSignOutBtn = findViewById(R.id.my_account_sign_out)
         favoritesBtn = findViewById(R.id.my_account_favorite_btn)
@@ -50,10 +48,8 @@ class MyAccountActivity : AppCompatActivity() {
         termsBtn = findViewById(R.id.my_account_terms_btn)
 
         profileNameTextView.text = currentUser.displayName
-        if (currentUser.photoUrl == Uri.EMPTY) {
-            Picasso.get().load(R.drawable.account_placeholder).into(profileImageView)
-        } else {
-            Picasso.get().load(currentUser.photoUrl).into(profileImageView)
+        if (currentUser.photoUrl != Uri.EMPTY) {
+            profileImageView.setImageUri(currentUser.photoUrl)
         }
     }
 
