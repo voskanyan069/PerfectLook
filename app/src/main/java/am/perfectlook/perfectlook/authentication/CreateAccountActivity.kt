@@ -2,7 +2,6 @@ package am.perfectlook.perfectlook.authentication
 
 import am.perfectlook.perfectlook.R
 import am.perfectlook.perfectlook.account.MyAccountActivity
-import am.perfectlook.perfectlook.views.CircleImageView
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -31,7 +31,7 @@ class CreateAccountActivity : AppCompatActivity() {
     private val storageProfileImage = storage.child("users/profile_images")
 
     private lateinit var titleView: TextView
-    private lateinit var profileImage: CircleImageView
+    private lateinit var profileImage: ShapeableImageView
     private lateinit var usernameInput: EditText
     private lateinit var countryInput: AutoCompleteTextView
     private lateinit var birthDateBtn: Button
@@ -40,6 +40,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
     private var isImageChanged = false
     private lateinit var imageUri: Uri
+    private lateinit var imageDownloadUrl: String
     private lateinit var email: String
     private lateinit var password: String
     private lateinit var fname: String
@@ -99,13 +100,12 @@ class CreateAccountActivity : AppCompatActivity() {
             "is_female" to isFemale,
         )
         if (isImageChanged) {
-            user["image_url"] = imageUri.toString()
+            user["image_url"] = imageDownloadUrl
         }
 
         auth.currentUser!!
             .updateProfile(
-                UserProfileChangeRequest
-                    .Builder()
+                UserProfileChangeRequest.Builder()
                     .setDisplayName(uname)
                     .setPhotoUri(if (isImageChanged) imageUri else Uri.EMPTY)
                     .build()
@@ -217,7 +217,8 @@ class CreateAccountActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val uri: Uri = data?.data!!
-            profileImage.setImageUri(uri)
+            Picasso.get().load(uri).into(profileImage)
+            imageUri = uri
 
             val storageFilePath = storageProfileImage.child("${auth.currentUser!!.uid}.jpg")
             storageFilePath.putFile(uri)
@@ -226,7 +227,7 @@ class CreateAccountActivity : AppCompatActivity() {
                         .downloadUrl
                         .addOnSuccessListener {
                             Log.d("mTag", "Profile image was updated - $it")
-                            imageUri = it
+                            imageDownloadUrl = it.toString()
                             isImageChanged = true
                         }
                 }

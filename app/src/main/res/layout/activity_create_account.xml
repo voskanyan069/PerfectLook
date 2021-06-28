@@ -21,16 +21,18 @@
             android:textSize="22sp"
             style="@style/Theme.PerfectLook.Header.Title2" />
 
-        <am.perfectlook.perfectlook.views.CircleImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/create_account_image"
             android:layout_width="126dp"
             android:layout_height="126dp"
             android:layout_below="@id/create_account_title"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            app:image_size="126"
-            app:src="@drawable/account_placeholder"
-            />
+            android:padding="2dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/button"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL"
+            app:srcCompat="@drawable/account_placeholder" />
 
         <ImageView
             android:id="@+id/create_account_add_image"

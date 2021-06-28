@@ -41,12 +41,16 @@
             android:padding="20dp"
             android:background="#80FFFFFF">
 
-            <am.perfectlook.perfectlook.views.CircleImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/my_account_profile_img_container"
                 android:layout_width="126dp"
                 android:layout_height="126dp"
-                app:image_size="126"
-                app:src="@drawable/account_placeholder" />
+                android:background="@color/button"
+                android:padding="2dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/button"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL"
+                app:srcCompat="@drawable/account_placeholder" />
 
             <TextView
                 android:id="@+id/my_account_profile_name"
